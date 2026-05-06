@@ -1,0 +1,125 @@
+// ============================================
+// 全局样式入口
+// 引入基础变量和重置样式 + 通用工具类
+// ============================================
+
+// 基础层
+@use './variables' as *;
+@use './reset';
+
+// ---------- 页面容器 ----------
+.page-container {
+  min-height: 100vh;
+  padding: $page-padding;
+  background-color: $bg-page;
+}
+
+// ---------- 通用卡片 ----------
+.card {
+  background-color: $bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  box-shadow: $shadow-sm;
+
+  &--hover {
+    transition: box-shadow $transition-duration $transition-timing;
+
+    &:active {
+      box-shadow: $shadow-md;
+    }
+  }
+}
+
+// ---------- 文本工具类 ----------
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-center { text-align: center; }
+.text-left   { text-align: left; }
+.text-right  { text-align: right; }
+
+// 颜色类
+.text-primary   { color: $primary-color; }
+.text-success   { color: $success-color; }
+.text-warning   { color: $warning-color; }
+.text-danger    { color: $danger-color; }
+.text-secondary { color: $text-secondary; }
+
+// ---------- Flex 工具类 ----------
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+// ---------- 安全区域适配（iPhone刘海屏） ----------
+.safe-area-bottom {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.safe-area-top {
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
+}
+
+// ---------- 通用过渡动画 ----------
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity $transition-duration $transition-timing;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform $transition-duration $transition-timing;
+}
+
+.slide-enter-from {
+  transform: translateY(100%);
+}
+
+.slide-leave-to {
+  transform: translateY(100%);
+}
+
+// ---------- 超出隐藏 ----------
+.overflow-hidden {
+  overflow: hidden;
+}
+
+// ---------- 禁用用户选择 ----------
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+}

@@ -1,0 +1,155 @@
+// ============================================
+// 样式重置
+// 清除浏览器默认样式，确保跨浏览器一致性
+// ============================================
+
+@use './variables' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', sans-serif;
+  font-size: $font-size-md;
+  color: $text-primary;
+  background-color: $bg-page;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  overscroll-behavior-y: contain;
+
+  height: 100%;
+  overflow: hidden;
+  
+  -ms-overflow-style: none;
+}
+
+// ---------- 列表重置 ----------
+ul,
+ol {
+  list-style: none;
+}
+
+// ---------- 链接重置 ----------
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+// ---------- 图片重置 ----------
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-style: none;
+}
+
+// ---------- 表单元素重置 ----------
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  color: inherit;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  appearance: button;
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  white-space: normal;
+}
+
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+
+// ---------- 表格重置 ----------
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+// ---------- HTML5 display-role reset for older browsers ----------
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+// ---------- 滚动条：默认隐藏，滚动时可选显示 ----------
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+// Firefox
+* {
+  scrollbar-width: none;           /* 默认无滚动条 */
+}
+
+// ---------- 选中文本样式 ----------
+::selection {
+  background-color: $primary-bg;
+  color: $primary-color;
+}
